@@ -3,13 +3,18 @@ import datetime
 import time
 import winsound
 
+
+
+
 def set_alarm():
     alarm_time = entry.get()
+    label=tk.Label(window,text="Alarm is set to "+str(alarm_time))
+    label.pack()
     while True:
-        current_time = datetime.datetime.now().strftime("%H:%M")
+        current_time = datetime.datetime.now().strftime("%I:%M %p")
         
         if current_time == alarm_time:
-            
+ 
             play_alarm()
             break
 
@@ -24,10 +29,11 @@ window = tk.Tk()
 window.title("Alarm Clock")
 
 # Create a label and entry for the alarm time
+
 label = tk.Label(window, text="Enter alarm time (HH:MM):")
 label.pack()
 
-entry = tk.Entry(window)
+entry = tk.Entry(window,)
 entry.pack()
 
 # Create a button to set the alarm
